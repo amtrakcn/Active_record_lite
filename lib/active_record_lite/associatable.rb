@@ -98,7 +98,6 @@ module Associatable
           #{self.send(primary_key)} = #{other_table_name}.#{foreign_key}  
       "
       
-      p query
       rows = DBConnection.execute(query)
       other_class.parse_all(rows)
       
@@ -115,8 +114,6 @@ module Associatable
       WHERE #{self.send(foreign_key)} = #{assoc_params[assoc1].other_table}.#{primary_key} 
     "
     
-
-    p query
     rows = DBConnection.execute(query)
     assoc_params[assoc2].other_class.parse_all(rows)
   
