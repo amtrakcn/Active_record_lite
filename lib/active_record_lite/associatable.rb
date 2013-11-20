@@ -18,10 +18,6 @@ class BelongsToAssocParams < AssocParams
     @other_class_name = params[:class_name] || name.to_s.camelize
     @primary_key = params[:primary_key] || :id
     @foreign_key = params[:foreign_key] || "#{name}_id".to_sym
-      #   
-    # @other_class = other_class_name.constantize
-    # @other_table_name = other_class.table_name
-    #       
   end
 
   def type
@@ -34,10 +30,6 @@ class HasManyAssocParams < AssocParams
     @other_class_name = params[:class_name] || name.to_s.camelize.singularize
     @primary_key = params[:primary_key] || :id
     @foreign_key = params[:foreign_key] || "#{name}_id".to_sym
-        # 
-    # @other_class = other_class_name.constantize
-    # @other_table_name = other_class.table_name
-
     @self_class = self_class
   end
 
